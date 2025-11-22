@@ -15,7 +15,7 @@ const serviceSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
   price: { type: Number, required: true },
-  availability: [{ type: String }], // e.g., ['Mon 10-12', 'Tue 2-4']
+  availability: [{ type: String }], // type: ['Mon 10-12', 'Tue 2-4']
   location: { type: String, required: true },
   rating: { type: Number, default: 0 },
   images: [{ type: String }],
