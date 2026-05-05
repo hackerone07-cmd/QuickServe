@@ -22,7 +22,7 @@ export const createBooking = async (req, res) => {
 export const getUserBookings = async (req, res) => {
   try {
     const bookings = await Booking.find({ customerId: req.user._id })
-      .populate('providerId', 'name')
+      .populate('providerId', 'name phone email')
       .populate('serviceId', 'title');
     res.json(bookings);
   } catch (err) {
@@ -33,7 +33,7 @@ export const getUserBookings = async (req, res) => {
 export const getProviderBookings = async (req, res) => {
   try {
     const bookings = await Booking.find({ providerId: req.user._id })
-      .populate('customerId', 'name')
+      .populate('customerId', 'name phone email')
       .populate('serviceId', 'title');
     res.json(bookings);
   } catch (err) {
